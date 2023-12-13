@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Turn On and Off</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            background-color: lightblue;
+        }
+        .main-div {
+            
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .sec-div {
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 2rem;
+        }
+        button{
+            background-color: yellow;
+            padding: 1rem;
+            border: none;
+            margin: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-div">
+        <h1>Can you turn the light on?</h1>
+        <button onclick="turnon()">Turn on the light </button>
+        <img src="lightoff.png" id="img" class="img" alt="" width="100px">
+        <button onclick="turnoff()">Turn off the light </button>
+    </div>
+    <div class="sec-div">
+        <h1>or</h1>
+        <h1>Can you turn the light on?</h1>
+        
+        <img src="lightoff.png" id="img2" class="img2" alt="" width="100px">
+        <br>
+        <button onclick="turnlight()">Turn the light on/off </button>
+    </div>
+    <script>
+        var flag = 0
+        const turnon = () => {
+            const myimg = document.getElementById("img");
+            myimg.src="lighton.png";
+        }
+        const turnoff = () => {
+            const myimg = document.getElementById("img");
+            myimg.src="lightoff.png";
+        }
+
+        const turnlight = () => {
+            if(flag==0)
+            {
+                const myimg = document.getElementById("img2");
+            myimg.src="lighton.png";
+            flag=1;
+            }
+            else{
+                const myimg = document.getElementById("img2");
+            myimg.src="lightoff.png";
+            flag=0
+            }
+
+        }
+    </script>
+</body>
+</html>
